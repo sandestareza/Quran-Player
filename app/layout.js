@@ -1,4 +1,6 @@
 import './globals.css'
+import { Raleway } from '@next/font/google';
+const raleway = Raleway({ subsets: ['latin'] });
 
 export default function RootLayout({ children }) {
   return (
@@ -8,7 +10,11 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>{children}</body>
+      <body className='dark'>
+        <main className={`${raleway.className} relative`}>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
